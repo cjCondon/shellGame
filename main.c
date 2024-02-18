@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "tokenizer.c"
+#include "inputProcessor.c"
 
 #define MAX 1024
 
@@ -12,6 +12,6 @@ int main(){
     
     printf("\n");
 
-    tokenize(input);
+    processInput(input);
     return 0;
 }
