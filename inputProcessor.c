@@ -1,10 +1,17 @@
-#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "inputProcessor.c"
 
-void tokenize(char*  str){
-    char* token = strtok(str, " ");
+#define MAX 1024
 
-    while(token != NULL){
-        printf("%s\n", token);
-        token = token = strtok(NULL, " ");
-    }
+int main(){
+    printf("Enter in prompt\n");
+
+    char input[MAX];
+    fgets(input, MAX, stdin);
+    
+    printf("\n");
+
+    processInput(input);
+    return 0;
 }
