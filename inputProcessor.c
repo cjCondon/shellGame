@@ -1,17 +1,26 @@
+#include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include "inputProcessor.c"
+#include "hashmap.c"
 
-#define MAX 1024
+#define MAX_WORD_COUNT 26
+#define MAX_WORD_LENGTH 41
 
-int main(){
-    printf("Enter in prompt\n");
-
-    char input[MAX];
-    fgets(input, MAX, stdin);
+void tokenize(char*  str, char tokenArr[MAX_WORD_COUNT][MAX_WORD_LENGTH]){
+    char* token = strtok(str, " ");
     
-    printf("\n");
+    int i = 2;
 
-    processInput(input);
-    return 0;
+    while(token != NULL){
+        strcpy(tokenArr[i], token);
+        printf("%s\n", token);
+        token = token = strtok(NULL, " ");
+
+        i++;
+    }
 }
+
+void processInput(char* input){
+    char tokenArr[MAX_WORD_COUNT][MAX_WORD_LENGTH];
+    tokenize(input, tokenArr);
+}
+
