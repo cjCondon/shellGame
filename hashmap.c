@@ -1,1 +1,3 @@
+typedef struct Hashmap{
 
+}Hashmap
